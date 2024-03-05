@@ -1,0 +1,15 @@
+<div class="d-flex justify-content-center py-4">
+  <%= form_with model: @task do |f| %>
+  <div class="mb-3">
+    <div class="mb-3">
+      <%= f.label :title  %>
+      <%= f.text_field :title  %>
+    </div>
+    <div class="mb-3">
+      <%= f.label :details  %>
+      <%= f.text_field :details %>
+    </div>
+  </div>
+    <%= f.submit  class: "btn btn-success" %>
+  <% end %>
+</div>

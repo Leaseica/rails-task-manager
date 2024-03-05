@@ -1,0 +1,22 @@
+<h1 class="text-center my-4">All Tasks</h1>
+
+<div class="row justify-content-center">
+  <div class="col-4">
+    <ul class="list-group list-group-numbered mb-5">
+      <% @tasks.each do |task| %>
+      <li class="list-group-item d-flex align-items-start">
+        <div class="ms-2 me-auto">
+          <%= link_to task.title, task_path(task), class: "fs-4"%>
+
+          <%= link_to "destroy", task_path(task),
+          data: { turbo_method: :delete, turbo_confirm: "Are you sure ?" },
+          class: "bi bi-trash btn btn-outline-danger btn-sm"
+          %>
+        </div>
+      </li>
+      <%end%>
+    </ul>
+     <%= link_to "New Task",  tasks_new_path, class: "btn btn-outline-primary" %>
+   </div>
+
+</div>
